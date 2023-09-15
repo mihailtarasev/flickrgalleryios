@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class MainViewController: UIViewController {
+    
     private static let searchBarPlaceholder = "Enter text"
     private static let mainAlertTitle = "Alert"
     private static let mainAlertActionTitle = "Close"
@@ -72,8 +73,7 @@ class MainViewController: UIViewController {
     }
 
     private func setupCollectionView() {
-        collectionViewController.setMainCollectionViewRefreshControl(refreshControl) 
-        collectionViewController.delegate = self
+        collectionViewController.setMainCollectionViewRefreshControl(refreshControl)
         addCollectionViewToViewHierarchy()
         setupCollectionViewConstraint()
     }
@@ -130,9 +130,8 @@ class MainViewController: UIViewController {
         if(!isOrientationDidChange) { return }
         isOrientationDidChange = false
         let size = self.view.bounds.size
-        let width = size.width
-        let height = size.height
-        self.collectionViewController.setCountRowsByOrientation(width: width, height: height)
+        let isLandscape = (size.width > size.height)
+        self.collectionViewController.setCountRowsByOrientation(width: size.width, isLandscape: isLandscape)
     }
     
     private func clearCollectionView() {

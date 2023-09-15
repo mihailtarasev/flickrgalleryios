@@ -17,7 +17,7 @@ class MainConfiguratorImplementation: MainConfigurator {
         let navigationController = viewController.navigationController!
         let mainRouter = MainRouterImplementation(navigationController: navigationController)
         let viewModel = MainViewModel()
-        let collectionViewController = MainCollectionViewController()
+        let collectionViewController = MainCollectionViewController(delegate: viewController)
         viewController.mainRouter = mainRouter
         viewController.viewModel = viewModel
         viewController.collectionViewController = collectionViewController

@@ -9,20 +9,22 @@ import Foundation
 import UIKit
 
 class MainCollectionViewController: NSObject, UICollectionViewDelegate, UICollectionViewDataSource {
+    
     private static let layoutFooterReferenceSize: CGFloat = 50
     private static let portraitCountRows: CGFloat = 3
     private static let landscapeCountRows: CGFloat = 4
     private static let itemMargin: CGFloat = 10
     
-    weak var delegate: MainCollectionViewControllerDelegate?
+    private weak var delegate: MainCollectionViewControllerDelegate?
+    private var isLoading = true
     private var oldSizePhotoList = 0
     private var photoList = Array<MainUseCasePhotoModel>()
-    private var isLoading = true
     private var loadingView: LoadingReusableView?
     private var mainCollectionViewFlowLayout: UICollectionViewFlowLayout
     private var mainCollectionView: UICollectionView
     
-    override init() {
+    init(delegate: MainCollectionViewControllerDelegate?) {
+        self.delegate = delegate
         self.mainCollectionViewFlowLayout = UICollectionViewFlowLayout()
         self.mainCollectionView = UICollectionView(frame: .zero, collectionViewLayout: self.mainCollectionViewFlowLayout)
         super.init()
@@ -150,27 +152,26 @@ class MainCollectionViewController: NSObject, UICollectionViewDelegate, UICollec
 
 extension MainCollectionViewController {
     // Change count items in Collection by Screen Orientation
-    func setCountRowsByOrientation(width: CGFloat, height: CGFloat) {
-        if(width > height) {
+    func setCountRowsByOrientation(width: CGFloat, isLandscape: Bool) {
+        if(isLandscape) {
             setLandscapeCountRows(width)
         }else {
             setPortraitCountRows(width)
         }
     }
     
-    private func setPortraitCountRows(_ width:CGFloat) {
+    private func setPortraitCountRows(_ width: CGFloat) {
         let layoutCountRows = MainCollectionViewController.portraitCountRows
-        let size = width / layoutCountRows - MainCollectionViewController.itemMargin
-        updateMainCollectionViewFlowLayout(size)
+        updateMainCollectionViewFlowLayout(width: width, layoutCountRows: layoutCountRows)
     }
     
-    private func setLandscapeCountRows(_ width:CGFloat) {
+    private func setLandscapeCountRows(_ width: CGFloat) {
         let layoutCountRows = MainCollectionViewController.landscapeCountRows
-        let size = width / layoutCountRows - MainCollectionViewController.itemMargin
-        updateMainCollectionViewFlowLayout(size)
+        updateMainCollectionViewFlowLayout(width: width, layoutCountRows: layoutCountRows)
     }
     
-    private func updateMainCollectionViewFlowLayout(_ layoutItemSize: CGFloat) {
+    private func updateMainCollectionViewFlowLayout(width: CGFloat, layoutCountRows: CGFloat) {
+        let layoutItemSize = width / layoutCountRows - MainCollectionViewController.itemMargin
         mainCollectionViewFlowLayout.itemSize = CGSize(width: layoutItemSize, height: layoutItemSize)
     }
 }
