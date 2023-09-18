@@ -1,19 +1,19 @@
 //
-//  MainUseCaseModel.swift
+//  MainModel.swift
 //  FlickrGallery
 //
-//  Created by mihailtarasev on 12/9/2023.
+//  Created by mihailtarasev on 18/9/2023.
 //
 
-struct MainUseCaseModel {
+struct MainModel {
     var text: String
     var currentPageNumber: Int
     var photoPages: Int
-    var photoList: Array<MainUseCasePhotoModel>
+    var photoList: Array<MainPhotoModel>
     var isRefreshing: Bool
 }
 
-extension MainUseCaseModel {
+extension MainModel {
     
     mutating func updateBy(_ result: MainNetworkModel) {
         photoPages = result.photoPages

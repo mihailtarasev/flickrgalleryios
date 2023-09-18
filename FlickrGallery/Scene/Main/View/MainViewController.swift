@@ -37,7 +37,7 @@ class MainViewController: UIViewController {
         alert.addAction(action)
         return alert
     }()
-    private var isOrientationDidChange = false
+    private var isOrientationDidChange = true
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,7 +99,7 @@ class MainViewController: UIViewController {
         }
         
         photoListUpdatedObservableToken = viewModel.observe(\.photoListUpdatedObservable, options: .new) { [self] _, change in
-            let photoList = change.newValue as? [MainUseCasePhotoModel] ?? []
+            let photoList = change.newValue as? [MainPhotoModel] ?? []
             self.updateCollectionView(photoList)
         }
 
@@ -141,7 +141,7 @@ class MainViewController: UIViewController {
         }
     }
     
-    private func updateCollectionView(_ photoList: [MainUseCasePhotoModel]) {
+    private func updateCollectionView(_ photoList: [MainPhotoModel]) {
         collectionViewController.updateDataSource(photoList)
         DispatchQueue.main.async {
             self.collectionViewController.insertItemsToCollection()

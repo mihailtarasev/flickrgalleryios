@@ -13,7 +13,7 @@ class MainViewModel: NSObject {
     static let defaultCurrentPage = 0
     static let defaultPhotoPages = 1
     static let defaultIsRefreshing = false
-    static let defaultPhotoList = Array<MainUseCasePhotoModel>()
+    static let defaultPhotoList = Array<MainPhotoModel>()
     
     @objc dynamic var pageClearedObservable = NSNumber()
     @objc dynamic var photoListUpdatedObservable = NSMutableArray()
@@ -21,7 +21,7 @@ class MainViewModel: NSObject {
     @objc dynamic var isAlertFiredObservable = NSString()
 
     private let networkGateway = MainNetworkGatewayImp()
-    private var model = MainUseCaseModel(
+    private var model = MainModel(
         text: defaultText,
         currentPageNumber: defaultCurrentPage,
         photoPages: defaultPhotoPages,

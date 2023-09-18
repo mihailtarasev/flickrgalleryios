@@ -8,12 +8,12 @@
 struct MainNetworkModel {
     var photoPageNumber: Int
     var photoPages: Int
-    var photoList: Array<MainUseCasePhotoModel>
+    var photoList: Array<MainPhotoModel>
     
     static func create(_ model: FlickrResponseModel) -> MainNetworkModel {
         let flickrPhotoList = model.photos.photo.compactMap { it in
             if let smallImageUrl = it.smallImageUrl, let largeImageUrl = it.largeImageUrl {
-                return MainUseCasePhotoModel(id: it.id, title: it.title, smallImageUrl: smallImageUrl, largeImageUrl: largeImageUrl)
+                return MainPhotoModel(id: it.id, title: it.title, smallImageUrl: smallImageUrl, largeImageUrl: largeImageUrl)
             }
             return nil
         }

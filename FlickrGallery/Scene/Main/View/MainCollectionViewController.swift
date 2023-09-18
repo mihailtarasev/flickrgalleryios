@@ -18,7 +18,7 @@ class MainCollectionViewController: NSObject, UICollectionViewDelegate, UICollec
     private weak var delegate: MainCollectionViewControllerDelegate?
     private var isLoading = true
     private var oldSizePhotoList = 0
-    private var photoList = Array<MainUseCasePhotoModel>()
+    private var photoList = Array<MainPhotoModel>()
     private var loadingView: LoadingReusableView?
     private var mainCollectionViewFlowLayout: UICollectionViewFlowLayout
     private var mainCollectionView: UICollectionView
@@ -38,7 +38,6 @@ class MainCollectionViewController: NSObject, UICollectionViewDelegate, UICollec
     
     private func setupMainCollectionViewFlowLayout() {
         let layoutFooterReferenceSize = MainCollectionViewController.layoutFooterReferenceSize
-        self.mainCollectionViewFlowLayout.itemSize = CGSize(width: 0, height: 0)
         self.mainCollectionViewFlowLayout.footerReferenceSize = CGSize(width: layoutFooterReferenceSize, height: layoutFooterReferenceSize)
         self.mainCollectionViewFlowLayout.scrollDirection = .vertical
     }
@@ -67,7 +66,7 @@ class MainCollectionViewController: NSObject, UICollectionViewDelegate, UICollec
         mainCollectionView.contentOffset = CGPointMake(0, mainCollectionView.refreshControl!.bounds.size.height  * -1)
     }
 
-    func updateDataSource(_ photoList: Array<MainUseCasePhotoModel>) {
+    func updateDataSource(_ photoList: Array<MainPhotoModel>) {
         oldSizePhotoList = self.photoList.count
         self.photoList = photoList
     }

@@ -1,11 +1,11 @@
 //
-//  MainUseCasePhotoModel.swift
+//  MainPhotoModel.swift
 //  FlickrGallery
 //
-//  Created by mihailtarasev on 12/9/2023.
+//  Created by mihailtarasev on 18/9/2023.
 //
 
-struct MainUseCasePhotoModel {
+struct MainPhotoModel {
     var id: String
     var title: String
     var smallImageUrl: String
