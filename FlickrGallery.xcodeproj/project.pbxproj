@@ -13,6 +13,9 @@
 		FABA01AB2AB444E00028DDC2 /* FindDeviceOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA01AA2AB444E00028DDC2 /* FindDeviceOrientation.swift */; };
 		FABA01B12AB826AA0028DDC2 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA01B02AB826AA0028DDC2 /* MainModel.swift */; };
 		FABA01B32AB826B70028DDC2 /* MainPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA01B22AB826B70028DDC2 /* MainPhotoModel.swift */; };
+		FABA01BD2AB82D660028DDC2 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA01B02AB826AA0028DDC2 /* MainModel.swift */; };
+		FABA01BE2AB82D660028DDC2 /* MainPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA01B22AB826B70028DDC2 /* MainPhotoModel.swift */; };
+		FABA01BF2AB82E3E0028DDC2 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD90E6D2AB083A000201980 /* MainViewModel.swift */; };
 		FAD90E152AB074E700201980 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD90E142AB074E700201980 /* AppDelegate.swift */; };
 		FAD90E172AB074E700201980 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD90E162AB074E700201980 /* SceneDelegate.swift */; };
 		FAD90E192AB074E700201980 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD90E182AB074E700201980 /* ViewController.swift */; };
@@ -612,6 +615,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FABA01BF2AB82E3E0028DDC2 /* MainViewModel.swift in Sources */,
+				FABA01BD2AB82D660028DDC2 /* MainModel.swift in Sources */,
+				FABA01BE2AB82D660028DDC2 /* MainPhotoModel.swift in Sources */,
 				FAD90E9E2AB32DFB00201980 /* FlickrHttpResponseParser.swift in Sources */,
 				FAD90E812AB09BA100201980 /* MainNetworkModel.swift in Sources */,
 				FAD90E802AB09B8E00201980 /* MainNetworkGatewayImp.swift in Sources */,
