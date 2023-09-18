@@ -37,7 +37,7 @@ class MainViewController: UIViewController {
         alert.addAction(action)
         return alert
     }()
-    private var isOrientationDidChange = true
+    private var isNeedToSetCountRowsByOrientation = true
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -118,7 +118,7 @@ class MainViewController: UIViewController {
     }
     
     @objc private func orientationDidChangeNotification() {
-        isOrientationDidChange = true
+        isNeedToSetCountRowsByOrientation = true
     }
 
     override func viewDidLayoutSubviews() {
@@ -127,8 +127,8 @@ class MainViewController: UIViewController {
     }
     
     private func setCollectionViewCountRowsForChangedOrientation() {
-        if(!isOrientationDidChange) { return }
-        isOrientationDidChange = false
+        if(!isNeedToSetCountRowsByOrientation) { return }
+        isNeedToSetCountRowsByOrientation = false
         let size = self.view.bounds.size
         let isLandscape = (size.width > size.height)
         self.collectionViewController.setCountRowsByOrientation(width: size.width, isLandscape: isLandscape)
