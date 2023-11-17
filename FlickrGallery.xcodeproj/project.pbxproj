@@ -18,7 +18,6 @@
 		FABA01BF2AB82E3E0028DDC2 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD90E6D2AB083A000201980 /* MainViewModel.swift */; };
 		FAD90E152AB074E700201980 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD90E142AB074E700201980 /* AppDelegate.swift */; };
 		FAD90E172AB074E700201980 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD90E162AB074E700201980 /* SceneDelegate.swift */; };
-		FAD90E192AB074E700201980 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD90E182AB074E700201980 /* ViewController.swift */; };
 		FAD90E1C2AB074E700201980 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD90E1A2AB074E700201980 /* Main.storyboard */; };
 		FAD90E1E2AB074ED00201980 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD90E1D2AB074ED00201980 /* Assets.xcassets */; };
 		FAD90E212AB074ED00201980 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD90E1F2AB074ED00201980 /* LaunchScreen.storyboard */; };
@@ -95,7 +94,6 @@
 		FAD90E112AB074E700201980 /* FlickrGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD90E142AB074E700201980 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAD90E162AB074E700201980 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FAD90E182AB074E700201980 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FAD90E1B2AB074E700201980 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAD90E1D2AB074ED00201980 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAD90E202AB074ED00201980 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -209,16 +207,10 @@
 		FAD90E132AB074E700201980 /* FlickrGallery */ = {
 			isa = PBXGroup;
 			children = (
+				FAF6919B2B075BFB00B17B7F /* AppSource */,
 				FAD90E462AB0757100201980 /* Service */,
 				FAD90E452AB0756900201980 /* Scene */,
 				FAD90E442AB0755C00201980 /* Extension */,
-				FAD90E142AB074E700201980 /* AppDelegate.swift */,
-				FAD90E162AB074E700201980 /* SceneDelegate.swift */,
-				FAD90E182AB074E700201980 /* ViewController.swift */,
-				FAD90E1A2AB074E700201980 /* Main.storyboard */,
-				FAD90E1D2AB074ED00201980 /* Assets.xcassets */,
-				FAD90E1F2AB074ED00201980 /* LaunchScreen.storyboard */,
-				FAD90E222AB074ED00201980 /* Info.plist */,
 			);
 			path = FlickrGallery;
 			sourceTree = "<group>";
@@ -378,6 +370,19 @@
 				FAD90E902AB1F84C00201980 /* UIImageView+Extension.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FAF6919B2B075BFB00B17B7F /* AppSource */ = {
+			isa = PBXGroup;
+			children = (
+				FAD90E142AB074E700201980 /* AppDelegate.swift */,
+				FAD90E162AB074E700201980 /* SceneDelegate.swift */,
+				FAD90E1A2AB074E700201980 /* Main.storyboard */,
+				FAD90E1D2AB074ED00201980 /* Assets.xcassets */,
+				FAD90E1F2AB074ED00201980 /* LaunchScreen.storyboard */,
+				FAD90E222AB074ED00201980 /* Info.plist */,
+			);
+			path = AppSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -583,7 +588,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAD90E192AB074E700201980 /* ViewController.swift in Sources */,
 				FAD90E8A2AB1CB5100201980 /* MainCollectionViewCell.swift in Sources */,
 				FAD90E8D2AB1E7B200201980 /* LoadingReusableView.swift in Sources */,
 				FAD90E992AB2F07600201980 /* DetailsViewController.swift in Sources */,
@@ -800,7 +804,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MS7TECW47H;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FlickrGallery/Info.plist;
+				INFOPLIST_FILE = FlickrGallery/AppSource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -828,7 +832,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MS7TECW47H;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FlickrGallery/Info.plist;
+				INFOPLIST_FILE = FlickrGallery/AppSource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
