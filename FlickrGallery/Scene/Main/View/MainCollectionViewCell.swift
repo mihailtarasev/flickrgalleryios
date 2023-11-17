@@ -13,7 +13,7 @@ class MainCollectionViewCell: UICollectionViewCell {
     
     private var cellImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleToFill
+        imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 5
 

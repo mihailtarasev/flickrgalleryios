@@ -88,8 +88,8 @@ class MainViewController: UIViewController {
         NSLayoutConstraint.activate([
             mainCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
             mainCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            mainCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            mainCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor)
+            mainCollectionView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            mainCollectionView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95)
         ])
     }
 

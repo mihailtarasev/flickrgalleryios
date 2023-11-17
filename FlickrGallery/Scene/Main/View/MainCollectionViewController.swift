@@ -13,7 +13,7 @@ class MainCollectionViewController: NSObject, UICollectionViewDelegate, UICollec
     private static let layoutFooterReferenceSize: CGFloat = 50
     private static let portraitCountRows: CGFloat = 3
     private static let landscapeCountRows: CGFloat = 4
-    private static let itemMargin: CGFloat = 10
+    private static let itemMargin: CGFloat = 15
     
     private weak var delegate: MainCollectionViewControllerDelegate?
     private var isLoading = true
@@ -170,7 +170,7 @@ extension MainCollectionViewController {
     }
     
     private func updateMainCollectionViewFlowLayout(width: CGFloat, layoutCountRows: CGFloat) {
-        let layoutItemSize = width / layoutCountRows - MainCollectionViewController.itemMargin
+        let layoutItemSize = (width / layoutCountRows) - MainCollectionViewController.itemMargin
         mainCollectionViewFlowLayout.itemSize = CGSize(width: layoutItemSize, height: layoutItemSize)
     }
 }

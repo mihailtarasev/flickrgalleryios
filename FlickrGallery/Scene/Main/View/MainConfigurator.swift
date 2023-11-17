@@ -21,5 +21,6 @@ class MainConfiguratorImplementation: MainConfigurator {
         viewController.mainRouter = mainRouter
         viewController.viewModel = viewModel
         viewController.collectionViewController = collectionViewController
+        viewController.view.backgroundColor = .white
     }
 }
